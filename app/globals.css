@@ -1,4 +1,9 @@
 @import "tailwindcss";
+@plugin "daisyui" {
+  themes:
+    garden --default,
+    forest --prefersdark;
+}
 
 :root {
   --background: #ffffff;
