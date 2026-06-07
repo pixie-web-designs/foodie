@@ -37,10 +37,4 @@
   uvicorn main:app --reload
   ```
 
-  OR
-
-  ```
-  fastapi dev main.py
-  ```
-
 ### Enjoy the app!
