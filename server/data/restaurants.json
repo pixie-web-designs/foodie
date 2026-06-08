@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "name": "Sunroot Commons",
+    "type": "Farm-to-Table",
+    "desc": "A community-focused eatery serving seasonal dishes harvested from nearby vertical gardens. Guests dine beneath living canopies powered by solar skylights.",
+    "address": "12 Canopy Walk, New Verdania",
+    "img": "/data_imgs/sunroot.png"
+  },
+  {
+    "id": 2,
+    "name": "Verdant Lotus",
+    "type": "Vietnamese",
+    "desc": "Fresh pho, bánh mì, and herb-forward specialties made with locally grown produce. Floating garden terraces surround the dining area.",
+    "address": "88 Harmony Grove, New Verdania",
+    "img": "/data_imgs/sunroot.png"
+  },
+  {
+    "id": 3,
+    "name": "Solar Spice Collective",
+    "type": "Indian",
+    "desc": "A vibrant restaurant offering regional Indian curries, dosas, and street food. Its rooftop greenhouse supplies many of the spices and vegetables used daily.",
+    "address": "41 Sunstream Avenue, New Verdania",
+    "img": "/data_imgs/sunroot.png"
+  },
+  {
+    "id": 4,
+    "name": "The Pollinator's Table",
+    "type": "Mediterranean",
+    "desc": "Known for wood-fired flatbreads, olive dishes, and fresh salads. Native pollinator gardens bloom throughout the property.",
+    "address": "7 Nectar Plaza, New Verdania",
+    "img": "/data_imgs/sunroot.png"
+  },
+  {
+    "id": 5,
+    "name": "Aurora Bamboo Kitchen",
+    "type": "Japanese",
+    "desc": "Serving sushi, ramen, and seasonal small plates in a bamboo-framed structure. Soft bioluminescent lighting creates a peaceful evening atmosphere.",
+    "address": "203 Evergreen Circuit, New Verdania",
+    "img": "/data_imgs/sunroot.png"
+  },
+  {
+    "id": 6,
+    "name": "Rainwater Cantina",
+    "type": "Mexican",
+    "desc": "A lively cantina featuring tacos, mole dishes, and fresh aguas frescas. The building showcases innovative rainwater harvesting systems.",
+    "address": "55 Reservoir Lane, New Verdania",
+    "img": "/data_imgs/sunroot.png"
+  },
+  {
+    "id": 7,
+    "name": "Skyvine Noodle House",
+    "type": "Chinese",
+    "desc": "Hand-pulled noodles and regional specialties served beneath suspended vine gardens. Solar-powered kitchens operate throughout the day.",
+    "address": "129 Cloudbridge Way, New Verdania",
+    "img": "/data_imgs/sunroot.png"
+  },
+  {
+    "id": 8,
+    "name": "The Circular Harvest",
+    "type": "Vegetarian",
+    "desc": "A zero-waste restaurant transforming local harvests into creative plant-based meals. Compost generated on-site supports neighboring community gardens.",
+    "address": "18 Renewal Square, New Verdania",
+    "img": "/data_imgs/sunroot.png"
+  },
+  {
+    "id": 9,
+    "name": "Windflower Mezze",
+    "type": "Middle Eastern",
+    "desc": "Offering hummus, shawarma, and freshly baked pita in a breezy courtyard setting. Decorative wind turbines help power the restaurant.",
+    "address": "64 Zephyr Street, New Verdania",
+    "img": "/data_imgs/sunroot.png"
+  },
+  {
+    "id": 10,
+    "name": "Emerald Tide Bistro",
+    "type": "Coastal Fusion",
+    "desc": "Specializing in sustainably sourced seafood paired with locally cultivated greens. Panoramic windows overlook New Verdania's algae-lined waterways.",
+    "address": "301 Watershed Promenade, New Verdania",
+    "img": "/data_imgs/sunroot.png"
+  },
+  {
+    "id": 11,
+    "name": "Golden Mycelium Café",
+    "type": "Contemporary European",
+    "desc": "A cozy café known for mushroom-inspired dishes, artisan breads, and seasonal soups. Many furnishings are grown from sustainable mycelium composites.",
+    "address": "22 Groveheart Lane, New Verdania",
+    "img": "/data_imgs/sunroot.png"
+  },
+  {
+    "id": 12,
+    "name": "Helios Hearth",
+    "type": "Korean",
+    "desc": "Serving bibimbap, barbecue, and comfort food prepared using solar thermal cooking systems. Community murals celebrate the city's renewable future.",
+    "address": "90 Radiance Boulevard, New Verdania",
+    "img": "/data_imgs/sunroot.png"
+  }
+]
