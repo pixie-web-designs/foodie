@@ -1,15 +1,12 @@
 import React from "react";
-
 import RestaurantList from "./components/restaurants/RestaurantList";
 
-const classMain = {
-  default: "w-full h-auto",
-};
+const props = { amount: 4 };
 
 const Home = async () => {
   return (
-    <main className={classMain.default}>
-      <RestaurantList />
+    <main className="w-full h-auto">
+      <RestaurantList {...props} />
     </main>
   );
 };

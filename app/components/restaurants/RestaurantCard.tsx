@@ -3,16 +3,16 @@ import React from "react";
 
 type RestaurantProps = {
   name: string;
-  type: string;
   desc: string;
   address: string;
   img: string;
   isNew: boolean;
+  tags: string[];
 };
 
-const RestaurantCard = async ({ name, type, desc, address, img, isNew }: RestaurantProps) => {
+const RestaurantCard = async ({ name, desc, address, img, isNew, tags }: RestaurantProps) => {
   return (
-    <div className="card bg-neutral text-accent-neutral w-96 shadow-sm">
+    <div className="card bg-neutral text-accent-neutral w-96 h-96 shadow-sm">
       <figure>
         <img src={img} alt="Sunroot Commons: Cod Fillet"></img>
       </figure>
