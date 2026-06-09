@@ -10,10 +10,11 @@ interface Restaurant {
   desc: string;
   address: string;
   img: string;
+  isNew: boolean;
 }
 
 const classList = {
-  default: "",
+  default: "flex flex-wrap w-full gap-4 p-4",
 };
 
 const RestaurantList = async () => {

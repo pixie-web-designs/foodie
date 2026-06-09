@@ -1,34 +1,29 @@
 /* Restaurant card component */
 import React from "react";
 
-const classCard = {
-  default: "card text-primary-content bg-primary w-96 shadow-sm",
-};
-
 type RestaurantProps = {
   name: string;
   type: string;
   desc: string;
   address: string;
   img: string;
+  isNew: boolean;
 };
 
-const RestaurantCard = async ({ name, type, desc, address, img }: RestaurantProps) => {
+const RestaurantCard = async ({ name, type, desc, address, img, isNew }: RestaurantProps) => {
   return (
-    <div className={classCard.default}>
+    <div className="card bg-neutral text-accent-neutral w-96 shadow-sm">
       <figure>
         <img src={img} alt="Sunroot Commons: Cod Fillet"></img>
       </figure>
-      <main className="card-body">
-        <h5 className="card-title">
+      <div className="card-body">
+        <h2 className="card-title">
           {name}
-          <div className="badge badge-accent">
-            <p className="text-accent-content">NEW</p>
-          </div>
-        </h5>
-        <p className="text-secondary-content">{address}</p>
+          {isNew && <div className="badge badge-accent">NEW</div>}
+        </h2>
+        <p>{address}</p>
         <p>{desc}</p>
-      </main>
+      </div>
     </div>
   );
 };
