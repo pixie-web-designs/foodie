@@ -13,19 +13,16 @@ interface Restaurant {
   desc: string;
   address: string;
   img: string;
-  isNew: boolean;
+  status: string[];
   tags: string[];
+  amount: number;
 }
-
-const classList = {
-  default: "flex flex-wrap w-full gap-4 p-4",
-};
 
 const RestaurantList = async ({ amount }: ListProps) => {
   const res = await fetch(`${process.env.API_URL}/restaurants`);
   const restaurants: Restaurant[] = await res.json();
   return (
-    <ul className={classList.default}>
+    <ul className="flex justify-center flex-wrap w-full gap-8 py-16 px-4">
       {[...restaurants].slice(0, amount).map((r) => (
         <li key={r.id}>
           <RestaurantCard {...r} />

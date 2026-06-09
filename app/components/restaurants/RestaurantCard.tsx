@@ -6,23 +6,35 @@ type RestaurantProps = {
   desc: string;
   address: string;
   img: string;
-  isNew: boolean;
+  status: string[];
   tags: string[];
+  amount: number;
 };
 
-const RestaurantCard = async ({ name, desc, address, img, isNew, tags }: RestaurantProps) => {
+const RestaurantCard = async ({ name, desc, address, img, status, tags, amount }: RestaurantProps) => {
   return (
-    <div className="card bg-neutral text-accent-neutral w-96 h-96 shadow-sm">
+    <div className="card bg-neutral text-accent-neutral w-96 shadow-sm">
       <figure>
         <img src={img} alt="Sunroot Commons: Cod Fillet"></img>
       </figure>
       <div className="card-body">
         <h2 className="card-title">
           {name}
-          {isNew && <div className="badge badge-accent">NEW</div>}
+          {status.map((s) => (
+            <div key={s} className="badge badge-accent">
+              {s}
+            </div>
+          ))}
         </h2>
         <p>{address}</p>
-        <p>{desc}</p>
+        {amount > 4 && <p>{desc}</p>}
+        <div className="card-actions justify-end pt-4">
+          {tags.map((t) => (
+            <div key={t} className="badge badge-secondary">
+              {t}
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

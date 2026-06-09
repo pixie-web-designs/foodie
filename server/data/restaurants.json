@@ -15,7 +15,7 @@
     "address": "88 Harmony Grove, New Verdania",
     "img": "/data_imgs/sunroot.png",
     "status": ["New"],
-    "tags": ["Vietnamese", "Local", "Street-Food"]
+    "tags": ["Vietnamese", "Local", "Street Food"]
   },
   {
     "id": 3,
@@ -24,7 +24,7 @@
     "address": "41 Sunstream Avenue, New Verdania",
     "img": "/data_imgs/sunroot.png",
     "status": [],
-    "tags": ["Indian", "Comfort-Food", "Vegan"]
+    "tags": ["Indian", "Comfort Food", "Modern"]
   },
   {
     "id": 4,
@@ -33,7 +33,7 @@
     "address": "7 Nectar Plaza, New Verdania",
     "img": "/data_imgs/sunroot.png",
     "status": [],
-    "tags": ["Mediterranean", "", ""]
+    "tags": ["Mediterranean", "Winery", "Rustic"]
   },
   {
     "id": 5,
@@ -51,7 +51,7 @@
     "address": "55 Reservoir Lane, New Verdania",
     "img": "/data_imgs/sunroot.png",
     "status": ["New", "Trending"],
-    "tags": ["Mexican", "Local", "Street-Food"]
+    "tags": ["Mexican", "Local", "Pub"]
   },
   {
     "id": 7,
@@ -60,7 +60,7 @@
     "address": "129 Cloudbridge Way, New Verdania",
     "img": "/data_imgs/sunroot.png",
     "status": ["Trending"],
-    "tags": ["Chinese"]
+    "tags": ["Chinese", "Local", "Noodle Bar"]
   },
   {
     "id": 8,
@@ -78,7 +78,7 @@
     "address": "64 Zephyr Street, New Verdania",
     "img": "/data_imgs/sunroot.png",
     "status": ["New", "Trending"],
-    "tags": ["Middle Eastern", "", "Fine Dining"]
+    "tags": ["Middle Eastern", "Bakery", "Fine Dining"]
   },
   {
     "id": 10,
@@ -87,7 +87,7 @@
     "address": "301 Watershed Promenade, New Verdania",
     "img": "/data_imgs/sunroot.png",
     "status": [],
-    "tags": ["Coastal Fusion", "", ""]
+    "tags": ["Coastal Fusion", "Pescetarian", "Pub"]
   },
   {
     "id": 11,
@@ -101,11 +101,10 @@
   {
     "id": 12,
     "name": "Helios Hearth",
-    "type": "Korean",
     "desc": "Serving bibimbap, barbecue, and comfort food prepared using solar thermal cooking systems. Murals celebrate the city's renewable future.",
     "address": "90 Radiance Boulevard, New Verdania",
     "img": "/data_imgs/sunroot.png",
     "status": [],
-    "tags": [""]
+    "tags": ["Korean", "Tabletop Grill", "Modern"]
   }
 ]
