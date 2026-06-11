@@ -1,14 +1,15 @@
 import React from "react";
 import RestaurantList from "./components/restaurants/RestaurantList";
 
-const props = { amount: 4 };
+const categories: string[] = ["New", "Trending", "Fine Dining", "Café", "Pub"];
+const props = { categories };
 
-const Home = async () => {
+const Page = () => {
   return (
-    <main className="w-full h-auto">
+    <main className="w-full h-auto p-16">
       <RestaurantList {...props} />
     </main>
   );
 };
 
-export default Home;
+export default Page;

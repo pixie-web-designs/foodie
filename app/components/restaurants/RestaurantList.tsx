@@ -1,10 +1,10 @@
 /* Restaurant List component */
-import React from "react";
+import React, { Fragment } from "react";
 
 import RestaurantCard from "./RestaurantCard";
 
 type ListProps = {
-  amount: number;
+  categories: string[];
 };
 
 interface Restaurant {
@@ -15,20 +15,56 @@ interface Restaurant {
   alt: string;
   status: string[];
   tags: string[];
-  amount: number;
 }
 
-const RestaurantList = async ({ amount }: ListProps) => {
+const RestaurantList = async ({ categories }: ListProps) => {
   const res = await fetch(`${process.env.API_URL}/restaurants`);
   const restaurants: Restaurant[] = await res.json();
+  const displayItems = categories.map(c => {
+    let title: string = "New Arrivals";
+    let subtitle: string = "The latest and greatest of the New Verdania culinary world.";
+    switch (c.toLowerCase()) {
+      case "trending":
+        title = "Popular Locales";
+        subtitle = "Check out these local delicacies. See what the buzz is about.";
+        break;
+      case "fine dining":
+        title = "Upscale Dining";
+        subtitle = "Luxurious culinary experiences. Ethically sourced and produced.";
+        break;
+      case "café":
+        title = "Coffee and Brunch";
+        subtitle = "Midday bites and artisan brews. Savour a fresh cup.";
+        break;
+      case "pub":
+        title = "Pours and Plates";
+        subtitle = "Curated menus and craft brews. Relax and enjoy.";
+        break;
+    }
+    const items = restaurants
+      .filter(r => (r.status.includes(c) && !r.tags.includes(c)) || (r.tags.includes(c) && !r.status.includes(c)))
+      .slice(0, 4);
+    return { category: c, title, subtitle, items };
+  });
+  console.log(displayItems);
   return (
-    <ul className="flex justify-center flex-wrap w-full gap-8 py-16 px-4">
-      {restaurants.map((r) => (
-        <li key={r.id}>
-          <RestaurantCard {...r} />
-        </li>
+    <>
+      {displayItems.map(d => (
+        <div key={`frag-${d.category}`} className="flex flex-col justify-between align-center">
+          <h2 key={`header-${d.category}`} className="text-3xl text-neutral-content pb-4">
+            {d.title}
+          </h2>
+          <h3 className="text-xl text-base-content pb-4">{d.subtitle}</h3>
+          <ul key={`list-${d.category}`} className="flex justify-between flex-wrap w-full pb-8">
+            {d.items.map(i => (
+              <li key={i.id}>
+                <RestaurantCard {...i} />
+              </li>
+            ))}
+          </ul>
+        </div>
       ))}
-    </ul>
+    </>
   );
 };
 

@@ -2,6 +2,7 @@ from fastapi import FastAPI, HTTPException, status
 from fastapi.middleware.cors import CORSMiddleware
 import json
 from pathlib import Path
+from typing import Any
 
 app = FastAPI(title="Foodie Server")
 
@@ -15,10 +16,12 @@ app.add_middleware(
 
 # Establish path to JSON data
 script_dir = Path(__file__).parent
-data_path = script_dir / "data" / "restaurants.json"
+data_path = script_dir / "data"
+data_dict: dict[str, Any] = {}
 
-with open(data_path, "r", encoding="utf-8") as file:
-  restaurant_data = json.load(file)
+for file_path in data_path.glob("*.json"):
+  with open(file_path, "r", encoding="utf-8") as file:
+    data_dict[file_path.name] = json.load(file)
 
 @app.get("/")
 def read_root():
@@ -26,10 +29,11 @@ def read_root():
 
 @app.get("/restaurants")
 def get_restaurants():
-  return restaurant_data
+  return data_dict["restaurant-basic.json"]
 
 @app.get("/restaurants/{id}")
 def get_restaurant(id: int):
+  restaurant_data: list[dict[str, Any]] = data_dict["restaurant-basic.json"]
   rest = next((r for r in restaurant_data if r["id"] == id), None)
 
   if rest is None:

@@ -6,7 +6,7 @@
     "address": "12 Canopy Walk, New Verdania",
     "img": "/data_imgs/sunroot.png",
     "alt": "Sunroot Commons: Cod Fillet",
-    "status": ["New", "Trending"],
+    "status": ["New"],
     "tags": ["Farm-to-Table", "Vegan", "Organic"]
   },
   {
@@ -54,7 +54,7 @@
     "desc": "A lively cantina featuring tacos, mole dishes, and fresh aguas frescas. The building showcases innovative rainwater harvesting systems.",
     "address": "55 Reservoir Lane, New Verdania",
     "img": "/data_imgs/sunroot.png",
-    "status": ["New", "Trending"],
+    "status": ["Trending"],
     "tags": ["Mexican", "Local", "Pub"]
   },
   {
@@ -83,7 +83,7 @@
     "address": "64 Zephyr Street, New Verdania",
     "img": "/data_imgs/sunroot.png",
     "alt": "Sunroot Commons: Cod Fillet",
-    "status": ["New", "Trending"],
+    "status": ["New"],
     "tags": ["Middle Eastern", "Bakery", "Fine Dining"]
   },
   {
@@ -138,7 +138,7 @@
   },
   {
     "id": 15,
-    "name": "Blue Fern Taverna",
+    "name": "Seabreeze Taverna",
     "desc": "Inspired by coastal Greece, this tavern serves mezze platters, seafood dishes, and herb-infused drinks. Vertical fern walls naturally cool the interior.",
     "address": "9 Seabreeze Terrace, New Verdania",
     "img": "/data_imgs/sunroot.png",
@@ -148,12 +148,12 @@
   },
   {
     "id": 16,
-    "name": "Copper Kelp Kitchen",
+    "name": "Ocean Kelp Kitchen",
     "desc": "A creative dining destination featuring sustainable sea vegetables, noodles, and fusion specialties. Decorative aquaponic channels weave through the restaurant.",
     "address": "150 Lagoon Circuit, New Verdania",
     "img": "/data_imgs/sunroot.png",
     "alt": "Sunroot Commons: Cod Fillet",
-    "status": ["New", "Trending"],
+    "status": ["Trending"],
     "tags": ["Asian Fusion", "Sustainable", "Modern"]
   },
   {
@@ -173,12 +173,12 @@
     "address": "81 Lantern Row, New Verdania",
     "img": "/data_imgs/sunroot.png",
     "alt": "Sunroot Commons: Cod Fillet",
-    "status": ["Trending"],
+    "status": [],
     "tags": ["Tea House", "Dim Sum", "Fine Dining"]
   },
   {
     "id": 19,
-    "name": "Riverleaf Smokehouse",
+    "name": "Willowbank Smokehouse",
     "desc": "Known for slow-smoked plant proteins, seasonal vegetables, and rustic sides. Waste heat from neighboring greenhouses helps power the kitchen.",
     "address": "205 Willowbank Drive, New Verdania",
     "img": "/data_imgs/sunroot.png",
@@ -193,22 +193,22 @@
     "address": "58 Solstice Court, New Verdania",
     "img": "/data_imgs/sunroot.png",
     "alt": "Sunroot Commons: Cod Fillet",
-    "status": ["New"],
+    "status": [],
     "tags": ["Spanish", "Tapas", "Outdoor Dining"]
   },
   {
     "id": 21,
-    "name": "Bloomforge Brewery & Kitchen",
+    "name": "Forge Plaza Brewery",
     "desc": "A community brewpub producing small-batch botanical ales alongside hearty seasonal dishes. Reclaimed materials and living walls define the industrial-chic atmosphere.",
     "address": "117 Forge Plaza, New Verdania",
     "img": "/data_imgs/sunroot.png",
     "alt": "Sunroot Commons: Cod Fillet",
-    "status": ["Trending"],
+    "status": [],
     "tags": ["Brewpub", "Gastropub", "Local"]
   },
   {
     "id": 22,
-    "name": "Crescent Orchard Brasserie",
+    "name": "Orchard Ring Brasserie",
     "desc": "A refined brasserie offering seasonal tasting menus inspired by New Verdania's fruit orchards and community farms.",
     "address": "245 Orchard Ring, New Verdania",
     "img": "/data_imgs/sunroot.png",
@@ -223,7 +223,7 @@
     "address": "33 Meadowspire Lane, New Verdania",
     "img": "/data_imgs/sunroot.png",
     "alt": "Sunroot Commons: Cod Fillet",
-    "status": ["New"],
+    "status": [],
     "tags": ["Café", "Organic", "Local"]
   },
   {
@@ -235,5 +235,32 @@
     "alt": "Sunroot Commons: Cod Fillet",
     "status": [],
     "tags": ["Moroccan", "Traditional", "Fine Dining"]
+  },
+  {
+    "id": 25,
+    "name": "Photosynth Café",
+    "desc": "A bright biophilic café nestled inside a living greenhouse dome, serving specialty coffees, botanical lattes, and fresh pastries made with ingredients sourced from New Verdania's urban farms. Hanging gardens and solar-powered misting systems create a tranquil oasis for community gatherings.",
+    "address": "5 Greenlight Atrium, New Verdania",
+    "img": "/data_imgs/sunroot.png",
+    "status": ["New", "Trending"],
+    "tags": ["Café", "Coffeehouse", "Modern"]
+  },
+  {
+    "id": 26,
+    "name": "The Turbine & Tap",
+    "desc": "A lively neighborhood pub serving craft ales, hearty flatbreads, and seasonal comfort food. Small decorative wind turbines and reclaimed timber accents celebrate New Verdania's renewable energy heritage.",
+    "address": "84 Zephyr Crossing, New Verdania",
+    "img": "/data_imgs/sunroot.png",
+    "status": ["Trending"],
+    "tags": ["Pub", "Craft Beer", "Comfort Food"]
+  },
+  {
+    "id": 27,
+    "name": "The Copper Vine Alehouse",
+    "desc": "An inviting alehouse known for botanical brews, smoked vegetable platters, and locally sourced burgers. Solar-lit trellises covered in climbing vines create a cozy atmosphere after sunset.",
+    "address": "191 Harvest Loop, New Verdania",
+    "img": "/data_imgs/sunroot.png",
+    "status": ["New"],
+    "tags": ["Pub", "Gastropub", "Local"]
   }
 ]
