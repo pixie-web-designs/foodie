@@ -5,6 +5,7 @@
     "desc": "A community-focused eatery serving seasonal dishes harvested from nearby vertical gardens. Guests dine beneath living canopies powered by solar skylights.",
     "address": "12 Canopy Walk, New Verdania",
     "img": "/data_imgs/sunroot.png",
+    "alt": "Sunroot Commons: Cod Fillet",
     "status": ["New", "Trending"],
     "tags": ["Farm-to-Table", "Vegan", "Organic"]
   },
@@ -14,6 +15,7 @@
     "desc": "Fresh pho, bánh mì, and herb-forward specialties made with locally grown produce. Floating garden terraces surround the dining area.",
     "address": "88 Harmony Grove, New Verdania",
     "img": "/data_imgs/sunroot.png",
+    "alt": "Sunroot Commons: Cod Fillet",
     "status": ["New"],
     "tags": ["Vietnamese", "Local", "Street Food"]
   },
@@ -23,6 +25,7 @@
     "desc": "A vibrant restaurant offering regional Indian curries, dosas, and street food. Its rooftop greenhouse supplies many of the spices and vegetables used daily.",
     "address": "41 Sunstream Avenue, New Verdania",
     "img": "/data_imgs/sunroot.png",
+    "alt": "Sunroot Commons: Cod Fillet",
     "status": [],
     "tags": ["Indian", "Comfort Food", "Modern"]
   },
@@ -32,6 +35,7 @@
     "desc": "Known for wood-fired flatbreads, olive dishes, and fresh salads. Native pollinator gardens bloom throughout the property.",
     "address": "7 Nectar Plaza, New Verdania",
     "img": "/data_imgs/sunroot.png",
+    "alt": "Sunroot Commons: Cod Fillet",
     "status": [],
     "tags": ["Mediterranean", "Winery", "Rustic"]
   },
@@ -68,6 +72,7 @@
     "desc": "A zero-waste restaurant transforming local harvests into creative plant-based meals. Compost generated on-site supports neighboring community gardens.",
     "address": "18 Renewal Square, New Verdania",
     "img": "/data_imgs/sunroot.png",
+    "alt": "Sunroot Commons: Cod Fillet",
     "status": [],
     "tags": ["Vegetarian", "Organic", "Modern"]
   },
@@ -77,6 +82,7 @@
     "desc": "Offering hummus, shawarma, and freshly baked pita in a breezy courtyard setting. Decorative wind turbines help power the restaurant.",
     "address": "64 Zephyr Street, New Verdania",
     "img": "/data_imgs/sunroot.png",
+    "alt": "Sunroot Commons: Cod Fillet",
     "status": ["New", "Trending"],
     "tags": ["Middle Eastern", "Bakery", "Fine Dining"]
   },
@@ -86,6 +92,7 @@
     "desc": "Specializing in sustainably sourced seafood paired with locally cultivated greens. Panoramic windows overlook New Verdania's algae-lined waterways.",
     "address": "301 Watershed Promenade, New Verdania",
     "img": "/data_imgs/sunroot.png",
+    "alt": "Sunroot Commons: Cod Fillet",
     "status": [],
     "tags": ["Coastal Fusion", "Pescetarian", "Pub"]
   },
@@ -95,6 +102,7 @@
     "desc": "A cozy café known for mushroom-inspired dishes, artisan breads, and seasonal soups. Many furnishings are grown from sustainable mycelium composites.",
     "address": "22 Groveheart Lane, New Verdania",
     "img": "/data_imgs/sunroot.png",
+    "alt": "Sunroot Commons: Cod Fillet",
     "status": [],
     "tags": ["Contemporary", "Café", "Rustic"]
   },
@@ -104,7 +112,128 @@
     "desc": "Serving bibimbap, barbecue, and comfort food prepared using solar thermal cooking systems. Murals celebrate the city's renewable future.",
     "address": "90 Radiance Boulevard, New Verdania",
     "img": "/data_imgs/sunroot.png",
+    "alt": "Sunroot Commons: Cod Fillet",
     "status": [],
     "tags": ["Korean", "Tabletop Grill", "Modern"]
+  },
+  {
+    "id": 13,
+    "name": "Moonpetal Patisserie",
+    "desc": "An elegant bakery crafting pastries, fruit tarts, and herbal teas using ingredients grown in nearby rooftop orchards. Gentle moonlight panels illuminate the evening café.",
+    "address": "14 Lumen Crescent, New Verdania",
+    "img": "/data_imgs/sunroot.png",
+    "alt": "Sunroot Commons: Cod Fillet",
+    "status": ["New"],
+    "tags": ["Bakery", "Desserts", "Café"]
+  },
+  {
+    "id": 14,
+    "name": "Canopy Ember Grill",
+    "desc": "A warm gathering space serving flame-grilled vegetables, skewers, and hearty grain bowls. Living trees grow through the open-air dining hall.",
+    "address": "72 Arbor Exchange, New Verdania",
+    "img": "/data_imgs/sunroot.png",
+    "alt": "Sunroot Commons: Cod Fillet",
+    "status": ["Trending"],
+    "tags": ["Grill", "Fusion", "Comfort Food"]
+  },
+  {
+    "id": 15,
+    "name": "Blue Fern Taverna",
+    "desc": "Inspired by coastal Greece, this tavern serves mezze platters, seafood dishes, and herb-infused drinks. Vertical fern walls naturally cool the interior.",
+    "address": "9 Seabreeze Terrace, New Verdania",
+    "img": "/data_imgs/sunroot.png",
+    "alt": "Sunroot Commons: Cod Fillet",
+    "status": [],
+    "tags": ["Greek", "Pescetarian", "Rustic"]
+  },
+  {
+    "id": 16,
+    "name": "Copper Kelp Kitchen",
+    "desc": "A creative dining destination featuring sustainable sea vegetables, noodles, and fusion specialties. Decorative aquaponic channels weave through the restaurant.",
+    "address": "150 Lagoon Circuit, New Verdania",
+    "img": "/data_imgs/sunroot.png",
+    "alt": "Sunroot Commons: Cod Fillet",
+    "status": ["New", "Trending"],
+    "tags": ["Asian Fusion", "Sustainable", "Modern"]
+  },
+  {
+    "id": 17,
+    "name": "Sunblossom Arepa House",
+    "desc": "A cheerful eatery serving arepas, roasted vegetables, and tropical juices sourced from local greenhouse cooperatives.",
+    "address": "36 Bloom Market Way, New Verdania",
+    "img": "/data_imgs/sunroot.png",
+    "alt": "Sunroot Commons: Cod Fillet",
+    "status": [],
+    "tags": ["Latin American", "Street Food", "Local"]
+  },
+  {
+    "id": 18,
+    "name": "The Moss Lantern",
+    "desc": "Guests enjoy handcrafted dumplings and tea beneath glowing moss lanterns cultivated by local bio-designers. Rain gardens surround the tranquil courtyard.",
+    "address": "81 Lantern Row, New Verdania",
+    "img": "/data_imgs/sunroot.png",
+    "alt": "Sunroot Commons: Cod Fillet",
+    "status": ["Trending"],
+    "tags": ["Tea House", "Dim Sum", "Fine Dining"]
+  },
+  {
+    "id": 19,
+    "name": "Riverleaf Smokehouse",
+    "desc": "Known for slow-smoked plant proteins, seasonal vegetables, and rustic sides. Waste heat from neighboring greenhouses helps power the kitchen.",
+    "address": "205 Willowbank Drive, New Verdania",
+    "img": "/data_imgs/sunroot.png",
+    "alt": "Sunroot Commons: Cod Fillet",
+    "status": [],
+    "tags": ["Smokehouse", "Barbecue", "Organic"]
+  },
+  {
+    "id": 20,
+    "name": "Starlight Paella Garden",
+    "desc": "Serving Spanish paellas and tapas in a garden illuminated by soft solar lanterns. Fragrant citrus trees line the pathways between tables.",
+    "address": "58 Solstice Court, New Verdania",
+    "img": "/data_imgs/sunroot.png",
+    "alt": "Sunroot Commons: Cod Fillet",
+    "status": ["New"],
+    "tags": ["Spanish", "Tapas", "Outdoor Dining"]
+  },
+  {
+    "id": 21,
+    "name": "Bloomforge Brewery & Kitchen",
+    "desc": "A community brewpub producing small-batch botanical ales alongside hearty seasonal dishes. Reclaimed materials and living walls define the industrial-chic atmosphere.",
+    "address": "117 Forge Plaza, New Verdania",
+    "img": "/data_imgs/sunroot.png",
+    "alt": "Sunroot Commons: Cod Fillet",
+    "status": ["Trending"],
+    "tags": ["Brewpub", "Gastropub", "Local"]
+  },
+  {
+    "id": 22,
+    "name": "Crescent Orchard Brasserie",
+    "desc": "A refined brasserie offering seasonal tasting menus inspired by New Verdania's fruit orchards and community farms.",
+    "address": "245 Orchard Ring, New Verdania",
+    "img": "/data_imgs/sunroot.png",
+    "alt": "Sunroot Commons: Cod Fillet",
+    "status": [],
+    "tags": ["Brasserie", "Farm-to-Table", "Fine Dining"]
+  },
+  {
+    "id": 23,
+    "name": "Thistle & Sun Café",
+    "desc": "A welcoming neighborhood café serving artisanal sandwiches, seasonal salads, and floral-infused beverages. Sun-tracking glass panels maximize natural light throughout the day.",
+    "address": "33 Meadowspire Lane, New Verdania",
+    "img": "/data_imgs/sunroot.png",
+    "alt": "Sunroot Commons: Cod Fillet",
+    "status": ["New"],
+    "tags": ["Café", "Organic", "Local"]
+  },
+  {
+    "id": 24,
+    "name": "Verdelight Tagine House",
+    "desc": "Specializing in Moroccan tagines, couscous, and mint teas prepared with produce from nearby community gardens. Intricate solar lanterns cast warm patterns across the dining hall.",
+    "address": "142 Oasis Circle, New Verdania",
+    "img": "/data_imgs/sunroot.png",
+    "alt": "Sunroot Commons: Cod Fillet",
+    "status": [],
+    "tags": ["Moroccan", "Traditional", "Fine Dining"]
   }
 ]

@@ -10,9 +10,9 @@ type ListProps = {
 interface Restaurant {
   id: number;
   name: string;
-  desc: string;
   address: string;
   img: string;
+  alt: string;
   status: string[];
   tags: string[];
   amount: number;
@@ -23,7 +23,7 @@ const RestaurantList = async ({ amount }: ListProps) => {
   const restaurants: Restaurant[] = await res.json();
   return (
     <ul className="flex justify-center flex-wrap w-full gap-8 py-16 px-4">
-      {[...restaurants].slice(0, amount).map((r) => (
+      {restaurants.map((r) => (
         <li key={r.id}>
           <RestaurantCard {...r} />
         </li>
