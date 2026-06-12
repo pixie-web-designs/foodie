@@ -46,15 +46,14 @@ const RestaurantList = async ({ categories }: ListProps) => {
       .slice(0, 4);
     return { category: c, title, subtitle, items };
   });
-  console.log(displayItems);
   return (
-    <>
+    <main className="p-8">
       {displayItems.map(d => (
         <div key={`frag-${d.category}`} className="flex flex-col justify-between align-center">
-          <h2 key={`header-${d.category}`} className="text-3xl text-neutral-content pb-4">
+          <h2 key={`header-${d.category}`} className="text-3xl text-base-content pb-2">
             {d.title}
           </h2>
-          <h3 className="text-xl text-base-content pb-4">{d.subtitle}</h3>
+          <h3 className="text-xl text-base-content pb-6">{d.subtitle}</h3>
           <ul key={`list-${d.category}`} className="flex justify-between flex-wrap w-full pb-8">
             {d.items.map(i => (
               <li key={i.id}>
@@ -64,7 +63,7 @@ const RestaurantList = async ({ categories }: ListProps) => {
           </ul>
         </div>
       ))}
-    </>
+    </main>
   );
 };
 

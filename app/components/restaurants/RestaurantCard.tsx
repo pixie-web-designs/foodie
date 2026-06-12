@@ -10,7 +10,7 @@ type RestaurantProps = {
 
 const RestaurantCard = async ({ name, address, img, alt }: RestaurantProps) => {
   return (
-    <div className="card bg-neutral text-accent-neutral w-88 shadow-primary-content shadow-sm">
+    <div className="card text-neutral-content bg-neutral w-[clamp(256px,320px,384px)] shadow-primary-content shadow-sm">
       <figure>
         <img src={img} alt={alt}></img>
       </figure>
