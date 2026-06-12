@@ -1,10 +1,20 @@
 /* Navbar Component */
 import React from "react";
+import { cookies } from "next/headers";
+import UserInterface from "./UserInterface";
 
-const Navbar = () => {
+const Navbar = async () => {
+  const cookieStore = await cookies();
+  const userCookie = cookieStore.get("user");
+  console.log(userCookie);
   return (
-    <div className="navbar text-neutral-content bg-base-200 shadow-base-200 shadow-sm">
-      <div className="flex-1"></div>
+    <div className="navbar fixed z-1 text-neutral-content bg-base-300 shadow-base-300 shadow-sm">
+      <div className="flex-1">
+        <h2 className="text-base-content text-3xl">🥐 Foodie</h2>
+      </div>
+      <div className="flex gap-4">
+        <UserInterface userData={userCookie?.value} />
+      </div>
     </div>
   );
 };
