@@ -22,7 +22,7 @@ const UserInterface = ({ userData }: User) => {
   useEffect(() => {
     const checkAuth = async () => {
       try {
-        const userCookie = JSON.parse(userData);
+        const userCookie = JSON.parse(userData || "");
         if (userCookie) setUser(JSON.parse(userCookie.value));
       } catch (err) {
         console.log("No user logged in. Setting Guest");

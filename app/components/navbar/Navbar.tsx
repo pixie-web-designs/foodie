@@ -6,7 +6,7 @@ import UserInterface from "./UserInterface";
 const Navbar = async () => {
   const cookieStore = await cookies();
   const userCookie = cookieStore.get("user");
-  console.log(userCookie);
+  // console.log(userCookie);
   return (
     <div className="navbar fixed z-1 text-neutral-content bg-base-300 shadow-base-300 shadow-sm">
       <div className="flex-1">
