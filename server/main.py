@@ -1,8 +1,12 @@
 from fastapi import FastAPI, HTTPException, status
+from fastapi.responses import RedirectResponse
 from fastapi.middleware.cors import CORSMiddleware
+from uuid import uuid4
 import json
 from pathlib import Path
 from typing import Any
+
+from restaurants import load_restaurants, load_restaurant
 
 app = FastAPI(title="Foodie Server")
 
@@ -29,17 +33,17 @@ def read_root():
 
 @app.get("/restaurants")
 def get_restaurants():
-  return data_dict["restaurant-basic.json"]
+  return load_restaurants()
 
 @app.get("/restaurants/{id}")
 def get_restaurant(id: int):
-  restaurant_data: list[dict[str, Any]] = data_dict["restaurant-basic.json"]
-  rest = next((r for r in restaurant_data if r["id"] == id), None)
+  restaurant = load_restaurant(id)
 
-  if rest is None:
+  if restaurant is None:
     raise HTTPException(
       status_code=status.HTTP_404_NOT_FOUND,
       detail=f"Restaurant with id {id} not found"
     )
 
-  return rest
+  return restaurant
+
