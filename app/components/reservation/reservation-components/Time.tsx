@@ -46,7 +46,7 @@ const Time = () => {
   };
   return (
     <div className="dropdown flex-1">
-      <div tabIndex={0} role="button" className="btn btn-block btn-soft m-1 flex-col">
+      <div tabIndex={0} role="button" className="btn btn-block btn-soft m-1">
         <p>{time}</p>
       </div>
       <ul tabIndex={-1} className="dropdown-content menu bg-base-200 rounded-box z-1 w-32 p-2 shadow-sm">
