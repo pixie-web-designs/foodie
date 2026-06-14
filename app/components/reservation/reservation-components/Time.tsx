@@ -1,57 +1,36 @@
 /* Reservation time selection dropdown */
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import { DateTime } from "luxon";
 
-// Timestamp with 30 minute intervals creation function
-const generateTimeIntervals = (start: DateTime, end: DateTime): string[] => {
-  // Return value and current time
-  const intervals: string[] = [];
-  const now = DateTime.now();
-  let current = start;
-
-  // Push current interval to match with current time if selected date matches the current date
-  if (start.hasSame(now, "day") && now > start) {
-    current = now
-      .plus({
-        minutes: 30 - (now.minute % 30),
-      })
-      .startOf("minute");
-  }
-
-  // Push timestamps to return value array in 30 minute intervals
-  while (current <= end) {
-    intervals.push(current.toFormat("h:mm a"));
-    current = current.plus({ minutes: 30 });
-  }
-  return intervals;
+type TimeProps = {
+  date: DateTime;
+  times: string[];
+  time: DateTime;
+  setTime: React.Dispatch<React.SetStateAction<DateTime>>;
 };
 
-const Time = () => {
-  const [time, setTime] = useState<string>(
-    DateTime.now()
-      .plus({ minutes: 30 - (DateTime.now().minute % 30) })
-      .toFormat("h:mm a")
-  );
-  const times: string[] = generateTimeIntervals(
-    DateTime.now().set({ hour: 0, minute: 0, second: 0, millisecond: 0 }),
-    DateTime.now().set({ hour: 21, minute: 0, second: 0, millisecond: 0 })
-  );
+const Time = ({ date, time, setTime, times }: TimeProps) => {
+  useEffect(() => {
+    const random = Math.floor(Math.random()) * times.length;
+    const earliest = DateTime.fromFormat(times[random], "h:mm a");
+    setTime(date?.set({ hour: earliest.hour, minute: earliest.minute, second: 0, millisecond: 0 }));
+  }, [times]);
   const handleClick = (value: string) => {
-    setTime(value);
+    setTime(DateTime.fromFormat(`${date?.toFormat("ccc, LLL d")} ${value}`, "ccc, LLL d h:mm a"));
     if (document.activeElement instanceof HTMLElement) {
       document.activeElement.blur();
     }
   };
   return (
-    <div className="dropdown flex-1">
-      <div tabIndex={0} role="button" className="btn btn-block btn-soft m-1">
-        <p>{time}</p>
+    <div className="dropdown">
+      <div tabIndex={0} role="button" className="join-item btn w-48 h-12 btn-soft m-1">
+        <p>{time?.toFormat("h:mm a")}</p>
       </div>
       <ul tabIndex={-1} className="dropdown-content menu bg-base-200 rounded-box z-1 w-32 p-2 shadow-sm">
         {times.map(t => (
-          <li key={`guest-${t}`}>
+          <li key={`time-${t}`}>
             <button onClick={() => handleClick(t)}>{t}</button>
           </li>
         ))}
