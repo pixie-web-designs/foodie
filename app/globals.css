@@ -1,8 +1,12 @@
 @import "tailwindcss";
 @plugin "daisyui" {
   themes:
-    garden --default,
-    forest --prefersdark;
+    retro --default,
+    forest --prefersdark,
+    silk,
+    winter,
+    sunset,
+    coffee;
 }
 
 :root {

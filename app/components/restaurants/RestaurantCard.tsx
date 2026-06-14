@@ -9,6 +9,7 @@ type RestaurantProps = {
 };
 
 const RestaurantCard = async ({ name, address, img, alt }: RestaurantProps) => {
+  // Return a restaurant card for the landing page
   return (
     <>
       <figure>
