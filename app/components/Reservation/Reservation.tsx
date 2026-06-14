@@ -3,35 +3,11 @@
 
 import React, { useState } from "react";
 import { DateTime } from "luxon";
+import { DayPicker } from "@daypicker/react";
 
-// Basic range array creation function
-const range = (start: number, end: number, step: number = 1) => {
-  const length = Math.floor((end - start) / step) + 1;
-  return Array.from({ length }, (_, index) => start + index * step);
-};
-// Timestamp with 30 minute intervals creation function
-const generateTimeIntervals = (start: DateTime, end: DateTime): string[] => {
-  // Return value and current time
-  const intervals: string[] = [];
-  const now = DateTime.now();
-  let current = start;
+import Guest from "./reservation-components/Guest";
+import Time from "./reservation-components/Time";
 
-  // Push current interval to match with current time if selected date matches the current date
-  if (start.hasSame(now, "day") && now > start) {
-    current = now
-      .plus({
-        minutes: 30 - (now.minute % 30),
-      })
-      .startOf("minute");
-  }
-
-  // Push timestamps to return value array in 30 minute intervals
-  while (current <= end) {
-    intervals.push(current.toFormat("h:mm a"));
-    current = current.plus({ minutes: 30 });
-  }
-  return intervals;
-};
 // Function to create dropdown buttons from arrays
 const createDropdown = (
   items: any[],
@@ -70,23 +46,28 @@ const createDropdown = (
   );
 };
 
+const createCalendar = (val: string, setVal: React.Dispatch<React.SetStateAction<string>>) => {
+  return (
+    <div className="flex-1">
+      <button
+        popoverTarget="cally-reserve"
+        className="btn btn-block btn-soft m-1 flex-col"
+        id="date-reserve"
+        style={{ anchorName: "--date-reserve" }}
+      >
+        <p>Date</p>
+      </button>
+    </div>
+  );
+};
+
 const Reservation = () => {
-  const guests: number[] = range(1, 8);
-  const times: string[] = generateTimeIntervals(
-    DateTime.now().set({ hour: 0, minute: 0, second: 0, millisecond: 0 }),
-    DateTime.now().set({ hour: 21, minute: 0, second: 0, millisecond: 0 })
-  );
-  const [guest, setGuest] = useState<string>("2 Guests");
   const [day, setDay] = useState<string>(DateTime.now().toFormat("ccc, LLL d"));
-  const [time, setTime] = useState<string>(
-    DateTime.now()
-      .plus({ minutes: 30 - (DateTime.now().minute % 30) })
-      .toFormat("h:mm a")
-  );
   return (
     <div className="join w-full pt-24 px-8">
-      {createDropdown(guests, "Guest", 0, guest, setGuest)}
-      {createDropdown(times, "Time", 1, time, setTime)}
+      <Guest />
+      {createCalendar(day, setDay)}
+      <Time />
     </div>
   );
 };

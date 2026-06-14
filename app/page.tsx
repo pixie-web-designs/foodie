@@ -1,7 +1,7 @@
 import React from "react";
 
 import Navbar from "./components/navbar/Navbar";
-import Reservation from "./components/Reservation/Reservation";
+import Reservation from "./components/reservation/Reservation";
 import RestaurantList from "./components/restaurants/RestaurantList";
 
 const categories: string[] = ["New", "Trending", "Fine Dining", "Café", "Pub"];
