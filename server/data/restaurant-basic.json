@@ -1,0 +1,239 @@
+[
+  {
+    "id": 1,
+    "name": "Sunroot Commons",
+    "address": "12 Canopy Walk, New Verdania",
+    "img": "/thumbnails/sunroot.png",
+    "alt": "Sunroot Commons: Cod Fillet",
+    "status": ["New"],
+    "tags": ["Farm-to-Table", "Vegan", "Organic"]
+  },
+  {
+    "id": 2,
+    "name": "Verdant Lotus",
+    "address": "88 Harmony Grove, New Verdania",
+    "img": "/thumbnails/sunroot.png",
+    "alt": "Sunroot Commons: Cod Fillet",
+    "status": ["New"],
+    "tags": ["Vietnamese", "Local", "Street Food"]
+  },
+  {
+    "id": 3,
+    "name": "Solar Spice Collective",
+    "address": "41 Sunstream Avenue, New Verdania",
+    "img": "/thumbnails/sunroot.png",
+    "alt": "Sunroot Commons: Cod Fillet",
+    "status": [],
+    "tags": ["Indian", "Comfort Food", "Modern"]
+  },
+  {
+    "id": 4,
+    "name": "Pollinator's Table",
+    "address": "7 Nectar Plaza, New Verdania",
+    "img": "/thumbnails/sunroot.png",
+    "alt": "Sunroot Commons: Cod Fillet",
+    "status": [],
+    "tags": ["Mediterranean", "Winery", "Rustic"]
+  },
+  {
+    "id": 5,
+    "name": "Aurora Bamboo Kitchen",
+    "address": "203 Evergreen Circuit, New Verdania",
+    "img": "/thumbnails/sunroot.png",
+    "status": [],
+    "tags": ["Japanese", "Traditional", "Fine Dining"]
+  },
+  {
+    "id": 6,
+    "name": "Rainwater Cantina",
+    "address": "55 Reservoir Lane, New Verdania",
+    "img": "/thumbnails/sunroot.png",
+    "status": ["Trending"],
+    "tags": ["Mexican", "Local", "Pub"]
+  },
+  {
+    "id": 7,
+    "name": "Skyvine Noodle House",
+    "address": "129 Cloudbridge Way, New Verdania",
+    "img": "/thumbnails/sunroot.png",
+    "status": ["Trending"],
+    "tags": ["Chinese", "Local", "Noodle Bar"]
+  },
+  {
+    "id": 8,
+    "name": "The Circular Harvest",
+    "address": "18 Renewal Square, New Verdania",
+    "img": "/thumbnails/sunroot.png",
+    "alt": "Sunroot Commons: Cod Fillet",
+    "status": [],
+    "tags": ["Vegetarian", "Organic", "Modern"]
+  },
+  {
+    "id": 9,
+    "name": "Windflower Mezze",
+    "address": "64 Zephyr Street, New Verdania",
+    "img": "/thumbnails/sunroot.png",
+    "alt": "Sunroot Commons: Cod Fillet",
+    "status": ["New"],
+    "tags": ["Middle Eastern", "Bakery", "Fine Dining"]
+  },
+  {
+    "id": 10,
+    "name": "Emerald Tide Bistro",
+    "address": "301 Watershed Promenade, New Verdania",
+    "img": "/thumbnails/sunroot.png",
+    "alt": "Sunroot Commons: Cod Fillet",
+    "status": [],
+    "tags": ["Coastal Fusion", "Pescetarian", "Pub"]
+  },
+  {
+    "id": 11,
+    "name": "Golden Mycelium Café",
+    "address": "22 Groveheart Lane, New Verdania",
+    "img": "/thumbnails/sunroot.png",
+    "alt": "Sunroot Commons: Cod Fillet",
+    "status": [],
+    "tags": ["Contemporary", "Café", "Rustic"]
+  },
+  {
+    "id": 12,
+    "name": "Helios Hearth",
+    "address": "90 Radiance Boulevard, New Verdania",
+    "img": "/thumbnails/sunroot.png",
+    "alt": "Sunroot Commons: Cod Fillet",
+    "status": [],
+    "tags": ["Korean", "Tabletop Grill", "Modern"]
+  },
+  {
+    "id": 13,
+    "name": "Moonpetal Patisserie",
+    "address": "14 Lumen Crescent, New Verdania",
+    "img": "/thumbnails/sunroot.png",
+    "alt": "Sunroot Commons: Cod Fillet",
+    "status": ["New"],
+    "tags": ["Bakery", "Desserts", "Café"]
+  },
+  {
+    "id": 14,
+    "name": "Canopy Ember Grill",
+    "address": "72 Arbor Exchange, New Verdania",
+    "img": "/thumbnails/sunroot.png",
+    "alt": "Sunroot Commons: Cod Fillet",
+    "status": ["Trending"],
+    "tags": ["Grill", "Fusion", "Comfort Food"]
+  },
+  {
+    "id": 15,
+    "name": "Seabreeze Taverna",
+    "address": "9 Seabreeze Terrace, New Verdania",
+    "img": "/thumbnails/sunroot.png",
+    "alt": "Sunroot Commons: Cod Fillet",
+    "status": [],
+    "tags": ["Greek", "Pescetarian", "Rustic"]
+  },
+  {
+    "id": 16,
+    "name": "Ocean Kelp Kitchen",
+    "address": "150 Lagoon Circuit, New Verdania",
+    "img": "/thumbnails/sunroot.png",
+    "alt": "Sunroot Commons: Cod Fillet",
+    "status": ["Trending"],
+    "tags": ["Asian Fusion", "Sustainable", "Modern"]
+  },
+  {
+    "id": 17,
+    "name": "Sunblossom Arepa House",
+    "address": "36 Bloom Market Way, New Verdania",
+    "img": "/thumbnails/sunroot.png",
+    "alt": "Sunroot Commons: Cod Fillet",
+    "status": [],
+    "tags": ["Latin American", "Street Food", "Local"]
+  },
+  {
+    "id": 18,
+    "name": "The Moss Lantern",
+    "address": "81 Lantern Row, New Verdania",
+    "img": "/thumbnails/sunroot.png",
+    "alt": "Sunroot Commons: Cod Fillet",
+    "status": [],
+    "tags": ["Tea House", "Dim Sum", "Fine Dining"]
+  },
+  {
+    "id": 19,
+    "name": "Willowbank Smokehouse",
+    "address": "205 Willowbank Drive, New Verdania",
+    "img": "/thumbnails/sunroot.png",
+    "alt": "Sunroot Commons: Cod Fillet",
+    "status": [],
+    "tags": ["Smokehouse", "Barbecue", "Organic"]
+  },
+  {
+    "id": 20,
+    "name": "Starlight Paella Garden",
+    "address": "58 Solstice Court, New Verdania",
+    "img": "/thumbnails/sunroot.png",
+    "alt": "Sunroot Commons: Cod Fillet",
+    "status": [],
+    "tags": ["Spanish", "Tapas", "Outdoor Dining"]
+  },
+  {
+    "id": 21,
+    "name": "Forge Plaza Brewery",
+    "address": "117 Forge Plaza, New Verdania",
+    "img": "/thumbnails/sunroot.png",
+    "alt": "Sunroot Commons: Cod Fillet",
+    "status": [],
+    "tags": ["Brewpub", "Gastropub", "Local"]
+  },
+  {
+    "id": 22,
+    "name": "Orchard Ring Brasserie",
+    "address": "245 Orchard Ring, New Verdania",
+    "img": "/thumbnails/sunroot.png",
+    "alt": "Sunroot Commons: Cod Fillet",
+    "status": [],
+    "tags": ["Brasserie", "Farm-to-Table", "Fine Dining"]
+  },
+  {
+    "id": 23,
+    "name": "Thistle & Sun Café",
+    "address": "33 Meadowspire Lane, New Verdania",
+    "img": "/thumbnails/sunroot.png",
+    "alt": "Sunroot Commons: Cod Fillet",
+    "status": [],
+    "tags": ["Café", "Organic", "Local"]
+  },
+  {
+    "id": 24,
+    "name": "Verdelight Tagine House",
+    "address": "142 Oasis Circle, New Verdania",
+    "img": "/thumbnails/sunroot.png",
+    "alt": "Sunroot Commons: Cod Fillet",
+    "status": [],
+    "tags": ["Moroccan", "Traditional", "Fine Dining"]
+  },
+  {
+    "id": 25,
+    "name": "Photosynth Café",
+    "address": "5 Greenlight Atrium, New Verdania",
+    "img": "/thumbnails/sunroot.png",
+    "status": ["New", "Trending"],
+    "tags": ["Café", "Coffeehouse", "Modern"]
+  },
+  {
+    "id": 26,
+    "name": "The Turbine & Tap",
+    "address": "84 Zephyr Crossing, New Verdania",
+    "img": "/thumbnails/sunroot.png",
+    "status": ["Trending"],
+    "tags": ["Pub", "Craft Beer", "Comfort Food"]
+  },
+  {
+    "id": 27,
+    "name": "The Copper Vine Alehouse",
+    "address": "191 Harvest Loop, New Verdania",
+    "img": "/thumbnails/sunroot.png",
+    "status": ["New"],
+    "tags": ["Pub", "Gastropub", "Local"]
+  }
+]

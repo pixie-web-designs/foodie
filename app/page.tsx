@@ -1,17 +1,20 @@
 import React from "react";
 
+import Navbar from "./components/navbar/Navbar";
+import Reservation from "./components/reservation/Reservation";
 import RestaurantList from "./components/restaurants/RestaurantList";
 
-const classMain = {
-  default: "w-full h-auto",
-};
+const categories: string[] = ["New", "Trending", "Fine Dining", "Café", "Pub"];
+const props = { categories };
 
-const Home = async () => {
+const Page = () => {
   return (
-    <main className={classMain.default}>
-      <RestaurantList />
-    </main>
+    <>
+      <Navbar />
+      <Reservation />
+      <RestaurantList {...props} />
+    </>
   );
 };
 
-export default Home;
+export default Page;

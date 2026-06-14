@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "categoryId": 1,
+    "name": "Solar Mint Lemonade",
+    "desc": "Fresh lemonade infused with mint and garden herbs.",
+    "price": 4.5,
+    "hasAlcohol": false,
+    "dietaryTags": ["Vegetarian", "Vegan"],
+    "allergens": []
+  },
+  {
+    "id": 2,
+    "categoryId": 1,
+    "name": "Canopy Kombucha",
+    "desc": "House-fermented tea with seasonal fruit flavors.",
+    "price": 5.0,
+    "hasAlcohol": false,
+    "dietaryTags": ["Vegetarian", "Vegan"],
+    "allergens": []
+  },
+  {
+    "id": 3,
+    "categoryId": 2,
+    "name": "Garden Hummus Plate",
+    "desc": "Creamy hummus served with vegetables and flatbread.",
+    "price": 9.5,
+    "hasAlcohol": false,
+    "dietaryTags": ["Vegetarian", "Vegan"],
+    "allergens": ["Sesame", "Wheat"]
+  },
+  {
+    "id": 4,
+    "categoryId": 3,
+    "name": "Vertical Garden Grain Bowl",
+    "desc": "Ancient grains topped with roasted vegetables and herbs.",
+    "price": 16.0,
+    "hasAlcohol": false,
+    "dietaryTags": ["Vegetarian", "Vegan"],
+    "allergens": []
+  },
+  {
+    "id": 5,
+    "categoryId": 3,
+    "name": "Solar Harvest Flatbread",
+    "desc": "Wood-fired flatbread topped with seasonal produce.",
+    "price": 17.5,
+    "hasAlcohol": false,
+    "dietaryTags": ["Vegetarian"],
+    "allergens": ["Dairy", "Wheat"]
+  },
+  {
+    "id": 6,
+    "categoryId": 4,
+    "name": "Honey Blossom Tart",
+    "desc": "Fruit tart topped with edible flowers and local honey.",
+    "price": 8.0,
+    "hasAlcohol": false,
+    "dietaryTags": ["Vegetarian"],
+    "allergens": ["Dairy", "Eggs", "Wheat"]
+  }
+]
