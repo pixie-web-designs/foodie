@@ -2,7 +2,6 @@ import os
 import secrets
 from datetime import datetime, timezone
 
-import httpx
 from fastapi import HTTPException
 from fastapi.responses import JSONResponse, RedirectResponse
 
@@ -10,22 +9,10 @@ from schemas.auth_schema import RegisterRequest, LoginRequest
 from security import security
 
 from repositories import user_repository
-from services import email_service
+from services import (email_service, captcha_service)
 
-# Captcha
-async def verify_turnstile(token: str) -> bool:
-  async with httpx.AsyncClient() as client:
-    res = await client.post(
-      "https://challenges.cloudflare.com/turnstile/v0/siteverify",
-      data={
-        "secret": os.getenv("TURNSTILE_SECRET"),
-        "response": token,
-      },
-    )
-    return res.json().get("success", False)
-
-async def register(data: RegisterRequest, captcha_token: str):
-  if not await verify_turnstile(captcha_token):
+async def register(data: RegisterRequest):
+  if not await captcha_service.verify_turnstile(data.turnstile_token):
     raise HTTPException(status_code=400, detail="Invalid CAPTCHA")
   
   if user_repository.check_user_exists:

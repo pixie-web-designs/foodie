@@ -18,7 +18,7 @@ class Settings(BaseSettings):
   FRONTEND_URL: str = "http://localhost:3000"
 
   # CAPTCHA
-  TURNSTILE_SITE_KEY: str
+  TURNSTILE_VERIFY_URL: str
   TURNSTILE_SECRET_KEY: str
 
   # Environment

@@ -12,6 +12,8 @@ from services import (
   restaurant_service
 )
 
+from config import settings
+
 load_dotenv()
 
 app = FastAPI(title="Foodie Server")
@@ -33,7 +35,7 @@ app = FastAPI(title="Foodie Server")
 ENV = os.getenv("ENV", "development")
 
 if ENV == "development":
-  origins = ["http://localhost:3000"]
+  origins = [settings.FRONTEND_URL]
 else:
   origins = [
     "https://foodie.com",
@@ -52,8 +54,8 @@ app.state.limiter = limiter
 
 @app.post("/register")
 @limiter.limit("5/minute")
-async def register(request: Request, data: RegisterRequest, captcha_token: str):
-  return await auth_service.register(data, captcha_token)
+async def register(request: Request, data: RegisterRequest):
+  return await auth_service.register(data)
 
 @app.get("/verify")
 async def verify(token: str):

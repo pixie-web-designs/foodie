@@ -17,6 +17,8 @@ class RegisterRequest(BaseModel):
     ):
       raise ValueError("Password is too weak")
     return v
+  
+  turnstile_token: str
 
 class LoginRequest(BaseModel):
   email: EmailStr
