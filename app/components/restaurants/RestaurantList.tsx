@@ -52,14 +52,14 @@ const RestaurantList = async ({ categories }: ListProps) => {
   });
   // List component
   return (
-    <main className="p-8">
+    <main className="w-full p-8">
       {displayItems.map(d => (
         <div key={`frag-${d.category}`} className="flex flex-col justify-between align-center">
           <h2 key={`header-${d.category}`} className="text-3xl text-base-content pb-2">
             {d.title}
           </h2>
           <h3 className="text-xl text-base-content pb-6">{d.subtitle}</h3>
-          <ul key={`list-${d.category}`} className="flex justify-start w-full gap-4 pb-8">
+          <ul key={`list-${d.category}`} className="flex justify-start gap-4 pb-8">
             {d.items.map(i => (
               <div key={i.id} className="card flex-1 text-neutral-content bg-neutral shadow-neutral shadow-sm">
                 <RestaurantCard {...i} />

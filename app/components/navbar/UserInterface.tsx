@@ -3,7 +3,8 @@
 
 import React, { useState, useEffect } from "react";
 import { DateTime } from "luxon";
-import Link from "next/link";
+
+import Register from "./registration/Register";
 
 interface User {
   userData: string | undefined;
@@ -44,7 +45,7 @@ const UserInterface = ({ userData }: User) => {
         </div>
       )}
       <a className="btn">Login</a>
-      <a className="btn btn-primary">Sign Up</a>
+      <Register {...{ id: "register-modal" }} />
     </>
   );
 };
