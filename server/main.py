@@ -1,8 +1,7 @@
 import os
 
-import httpx
 from dotenv import load_dotenv
-from fastapi import FastAPI, HTTPException, status, Request
+from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 
 from schemas.auth_schema import RegisterRequest, LoginRequest
@@ -17,27 +16,39 @@ load_dotenv()
 
 app = FastAPI(title="Foodie Server")
 
+# Middleware for prod
+# origins = [
+#   "https://foodie.com",
+#   "https://www.foodie.com"
+# ]
+
+# app.add_middleware(
+#   CORSMiddleware,
+#   allow_origins=origins,
+#   allow_credentials=True,
+#   allow_methods=["GET, "POST", "PUT", "DELETE"],
+#   allow_headers=["Authorization", "Content-Type"],
+# )
+
+ENV = os.getenv("ENV", "development")
+
+if ENV == "development":
+  origins = ["http://localhost:3000"]
+else:
+  origins = [
+    "https://foodie.com",
+    "https://www.foodie.com",
+  ]
+
 app.add_middleware(
   CORSMiddleware,
-  allow_origins=["*"],
+  allow_origins=origins,
   allow_credentials=True,
   allow_methods=["*"],
   allow_headers=["*"],
 )
 
 app.state.limiter = limiter
-
-#Captcha
-async def verify_turnstile(token: str) -> bool:
-  async with httpx.AsyncClient() as client:
-    res = await client.post(
-      "https://challenges.cloudflare.com/turnstile/v0/siteverify",
-      data={
-        "secret": os.getenv("TURNSTILE_SECRET"),
-        "response": token,
-      },
-    )
-    return res.json().get("success", False)
 
 @app.post("/register")
 @limiter.limit("5/minute")
@@ -60,4 +71,3 @@ def get_restaurants():
 @app.get("/restaurants/{id}")
 def get_restaurant(id: int):
   return restaurant_service.get_restaurant_by_id(id)
-
