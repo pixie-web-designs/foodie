@@ -1,25 +1,17 @@
 import os
-import secrets
-from datetime import datetime, timedelta, timezone
 
 import httpx
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException, status, Request
-from fastapi.responses import JSONResponse, RedirectResponse
 from fastapi.middleware.cors import CORSMiddleware
 
-from models import RegisterRequest, LoginRequest
+from schemas.auth_schema import RegisterRequest, LoginRequest
 from rate_limit import limiter
-from security import (
-  hash_password,
-  verify_password,
-  hash_token,
-  create_access_token
-)
 
-from users import load_users, save_users
-from email_service import send_verification_email
-from restaurants import load_restaurants, load_restaurant
+from services import (
+  auth_service,
+  restaurant_service
+)
 
 load_dotenv()
 
@@ -50,104 +42,22 @@ async def verify_turnstile(token: str) -> bool:
 @app.post("/register")
 @limiter.limit("5/minute")
 async def register(request: Request, data: RegisterRequest, captcha_token: str):
-
-  if not await verify_turnstile(captcha_token):
-    raise HTTPException(status_code=400, detail="Invalid CAPTCHA")
-
-  users = load_users()
-  
-  if any(u["email"] == data.email for u in users):
-    return JSONResponse(
-      status_code=200,
-      content={"message": "If the account can be created, you will receive an email."},
-    )
-  
-  raw_token = secrets.token_urlsafe(32)
-
-  user = {
-    "id": secrets.token_urlsafe(16),
-    "email": data.email,
-    "password": hash_password(data.password),
-    "verified": False,
-    
-    # Store only the token hash
-    "verification_token_hash": hash_token(raw_token),
-
-    # Expiration
-    "verification_expires_at": (
-      datetime.now(timezone.utc) + timedelta(hours=24)
-    ).isoformat()
-  }
-
-  users.append(user)
-  save_users(users)
-
-  send_verification_email(data.email, raw_token)
-
-  return {
-    "message": (
-      "Registration Successful."
-      "Please verify your email."
-    )
-  }
+  return await auth_service.register(data, captcha_token)
 
 @app.get("/verify")
-def verify(token: str):
-  users = load_users()
-
-  # Get hashed token
-  token_hashed = hash_token(token)
-
-  # Check if user exists by comparing the hash of the provided token and the token hash stored in the db
-  user = next((u for u in users if u["verification_token_hash"] == token_hashed), None)
-
-  # Raise exception if there is no match
-  if not user:
-    raise HTTPException(status_code=400, detail="Invalid token")
-  
-  # Expiry check
-  expires = datetime.fromisoformat(user["verification_expires_at"])
-  if datetime.now(timezone.utc) > expires:
-    raise HTTPException(status_code=400, detail="Token expired")
-
-  user["verified"] = True
-  user["verification_token"] = None
-
-  save_users(users)
-
-  return RedirectResponse(url=f"{os.getenv("FRONTEND_URL")}/login")
+async def verify(token: str):
+  return await auth_service.verify(token)
 
 @app.post("/login")
 @limiter.limit("10/minute")
-def login(request: Request, data: LoginRequest):
-  users = load_users()
-  user = next((u for u in users if u["email"] == data.email), None)
-
-  # Prevent Enumeration
-  if not user:
-    raise HTTPException(status_code=401, detail="Invalid credentials")
-  
-  if not user:
-    raise HTTPException(status_code=403, detail="Email not verified")
-  
-  if not verify_password(data.password, user["password"]):
-    raise HTTPException(status_code=401, detail="Invalid credentials")
-  
-  token = create_access_token(user["id"])
-
-  return {"access_token": token, "token_type": "bearer"}
-
+async def login(request: Request, data: LoginRequest):
+  return await auth_service.login(data)
 
 @app.get("/restaurants")
 def get_restaurants():
-  return load_restaurants()
+  return restaurant_service.get_restaurants()
 
 @app.get("/restaurants/{id}")
 def get_restaurant(id: int):
-  restaurant = load_restaurant(id)
-
-  if restaurant is None:
-    raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Restaurant with id {id} not found")
-
-  return restaurant
+  return restaurant_service.get_restaurant_by_id(id)
 

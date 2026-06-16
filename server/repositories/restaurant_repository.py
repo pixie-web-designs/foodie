@@ -1,6 +1,5 @@
 import json
 from pathlib import Path
-from models import Restaurant
 
 DATA_FILE = Path("data/restaurant.json")
 

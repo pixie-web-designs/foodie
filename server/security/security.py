@@ -1,4 +1,5 @@
 import os
+import secrets
 import hashlib
 from datetime import datetime, timedelta, timezone
 
@@ -13,6 +14,17 @@ JWT_SECRET = os.getenv("JWT_DEV_SECRET", "JWT_FALLBACK_SECRET") # Remove fallbac
 
 # Algorithm for signing JWTs
 JWT_ALGORITHM = "HS256"
+
+# Create verification token
+def create_verification_token():
+  raw_token = secrets.token_urlsafe(32)
+  hashed_token = hash_token(raw_token)
+  expiry = (datetime.now(timezone.utc) + timedelta(hours=24)).isoformat()
+  return {
+    raw_token,
+    hashed_token,
+    expiry
+  }
 
 # Hash plain text and store it
 def hash_password(password: str) -> str:
