@@ -4,7 +4,7 @@ from datetime import datetime, timedelta, timezone
 
 import httpx
 from dotenv import load_dotenv
-from fastapi import FastAPI, HTTPException, status
+from fastapi import FastAPI, HTTPException, status, Request
 from fastapi.responses import JSONResponse, RedirectResponse
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -48,8 +48,8 @@ async def verify_turnstile(token: str) -> bool:
     return res.json().get("success", False)
 
 @app.post("/register")
-@limiter.limit("5/minutes")
-async def register(data: RegisterRequest, captcha_token: str):
+@limiter.limit("5/minute")
+async def register(request: Request, data: RegisterRequest, captcha_token: str):
 
   if not await verify_turnstile(captcha_token):
     raise HTTPException(status_code=400, detail="Invalid CAPTCHA")
@@ -119,7 +119,7 @@ def verify(token: str):
 
 @app.post("/login")
 @limiter.limit("10/minute")
-def login(data: LoginRequest):
+def login(request: Request, data: LoginRequest):
   users = load_users()
   user = next((u for u in users if u["email"] == data.email), None)
 
