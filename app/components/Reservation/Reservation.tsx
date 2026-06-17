@@ -33,8 +33,25 @@ const generateTimeIntervals = (start: DateTime, end: DateTime): string[] => {
 };
 
 const Reservation = () => {
+  // Disable current day if it's past 9:30 pm
+  const isDateDisabled = (date: Date): boolean => {
+    const now = DateTime.now();
+    const today = DateTime.fromJSDate(date);
+
+    // Disable previous dates
+    if (today.startOf("day") < now.startOf("day")) return true;
+
+    // Disable today if it's past 9:30 pm
+    if (today.hasSame(now, "day")) {
+      if (now.hour > 21 || (now.hour === 21 && now.minute >= 31)) return true;
+    }
+
+    return false;
+  };
   // Assign state for current date and time
-  const [date, setDate] = useState<DateTime>(DateTime.now());
+  const [date, setDate] = useState<DateTime>(
+    isDateDisabled(new Date()) ? DateTime.now().plus({ days: 1 }).startOf("day") : DateTime.now()
+  );
   const [time, setTime] = useState<DateTime>(DateTime.now().plus({ minutes: 30 - (DateTime.now().minute % 30) }));
   const [times, setTimes] = useState<string[]>(
     generateTimeIntervals(
@@ -45,7 +62,7 @@ const Reservation = () => {
   return (
     <aside className="join pt-24 px-8">
       <Guest />
-      <Calendar {...{ date, setDate, setTimes, generateTimeIntervals }} />
+      <Calendar {...{ date, setDate, setTimes, generateTimeIntervals, isDateDisabled }} />
       <Time {...{ date, time, setTime, times }} />
     </aside>
   );

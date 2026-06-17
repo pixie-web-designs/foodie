@@ -5,6 +5,7 @@ import React, { useState, useEffect } from "react";
 import { DateTime } from "luxon";
 
 import Register from "./registration/Register";
+import Login from "./registration/Login";
 
 interface User {
   userData: string | undefined;
@@ -44,7 +45,7 @@ const UserInterface = ({ userData }: User) => {
           </div>
         </div>
       )}
-      <a className="btn">Login</a>
+      <Login {...{ id: "login-modal" }} />
       <Register {...{ id: "register-modal" }} />
     </>
   );

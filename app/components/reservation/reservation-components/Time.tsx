@@ -13,8 +13,7 @@ type TimeProps = {
 
 const Time = ({ date, time, setTime, times }: TimeProps) => {
   useEffect(() => {
-    const random = Math.floor(Math.random()) * times.length;
-    const earliest = DateTime.fromFormat(times[random], "h:mm a");
+    const earliest = DateTime.fromFormat(times[0], "h:mm a");
     setTime(date?.set({ hour: earliest.hour, minute: earliest.minute, second: 0, millisecond: 0 }));
   }, [times]);
   const handleClick = (value: string) => {

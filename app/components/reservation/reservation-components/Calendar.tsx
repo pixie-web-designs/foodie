@@ -1,4 +1,5 @@
 /* Reservation calendar dropdown component */
+"use client";
 
 import React, { useState, useEffect, useRef } from "react";
 import { DateTime } from "luxon";
@@ -9,9 +10,10 @@ type CalendarProps = {
   setDate: React.Dispatch<React.SetStateAction<DateTime>>;
   setTimes: React.Dispatch<React.SetStateAction<string[]>>;
   generateTimeIntervals: (start: DateTime, end: DateTime) => string[];
+  isDateDisabled: (date: Date) => boolean;
 };
 
-const Calendar = ({ date, setDate, setTimes, generateTimeIntervals }: CalendarProps) => {
+const Calendar = ({ date, setDate, setTimes, generateTimeIntervals, isDateDisabled }: CalendarProps) => {
   // Set state for whether calendar is open
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -22,7 +24,7 @@ const Calendar = ({ date, setDate, setTimes, generateTimeIntervals }: CalendarPr
     setTimes(
       generateTimeIntervals(
         date?.set({ hour: 10, minute: 0, second: 0, millisecond: 0 }),
-        date?.set({ hour: 21, minute: 0, second: 0, millisecond: 0 })
+        date?.set({ hour: 21, minute: 30, second: 0, millisecond: 0 })
       )
     );
   }, [date]);
@@ -68,7 +70,7 @@ const Calendar = ({ date, setDate, setTimes, generateTimeIntervals }: CalendarPr
             mode="single"
             selected={date?.toJSDate()}
             onSelect={handleSelect}
-            disabled={{ before: new Date() }}
+            disabled={isDateDisabled}
             classNames={{ day_button: `${defaultClassNames.day_button} hover:disabled:cursor-default` }}
           />
         </div>
