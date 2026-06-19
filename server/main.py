@@ -32,7 +32,7 @@ app = FastAPI(title="Foodie Server")
 #   allow_headers=["Authorization", "Content-Type"],
 # )
 
-ENV = os.getenv("ENV", "development")
+ENV = settings.ENVIRONMENT or "development"
 
 if ENV == "development":
   origins = [settings.FRONTEND_URL]

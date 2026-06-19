@@ -11,17 +11,19 @@ from security import security
 from repositories import user_repository
 from services import (email_service, captcha_service)
 
+from config import settings
+
 async def register(data: RegisterRequest):
   if not await captcha_service.verify_turnstile(data.turnstile_token):
     raise HTTPException(status_code=400, detail="Invalid CAPTCHA")
   
-  if user_repository.check_user_exists:
+  if user_repository.check_user_exists(data.email):
     return JSONResponse(
       status_code=200,
       content={"message": "If the account can be created, you will receive an email."},
     )
   
-  token = security.create_verification_token
+  token = security.create_verification_token()
 
   user = {
     "id": secrets.token_urlsafe(16),
@@ -68,7 +70,7 @@ async def verify(token: str):
 
   user_repository.update(user)
 
-  return RedirectResponse(url=f"{os.getenv("FRONTEND_URL")}/login")
+  return RedirectResponse(url=f"{settings.FRONTEND_URL}/login")
 
 async def login(data: LoginRequest):
   user = user_repository.get_by_email(data.email)

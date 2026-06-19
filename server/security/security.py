@@ -6,6 +6,12 @@ from datetime import datetime, timedelta, timezone
 from jose import jwt
 from pwdlib import PasswordHash
 
+class Token:
+  def __init__(self, raw_token: str, hashed_token: str, expiry: str):
+    self.raw_token = raw_token
+    self.hashed_token = hashed_token
+    self.expiry = expiry
+
 # Password hash algorithm
 password_hash = PasswordHash.recommended()
 
@@ -20,11 +26,7 @@ def create_verification_token():
   raw_token = secrets.token_urlsafe(32)
   hashed_token = hash_token(raw_token)
   expiry = (datetime.now(timezone.utc) + timedelta(hours=24)).isoformat()
-  return {
-    raw_token,
-    hashed_token,
-    expiry
-  }
+  return Token(raw_token, hashed_token, expiry)
 
 # Hash plain text and store it
 def hash_password(password: str) -> str:

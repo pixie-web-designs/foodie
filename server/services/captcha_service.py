@@ -17,6 +17,7 @@ def check_turnstile_secret_exists():
 
 # Turnstile verification
 async def verify_turnstile(token: str) -> bool:
+  check_turnstile_url_exists()
   check_turnstile_secret_exists()
   async with httpx.AsyncClient(timeout=5.0) as client:
     res = await client.post(
