@@ -24,7 +24,7 @@ const Calendar = ({ date, setDate, setTimes, generateTimeIntervals, isDateDisabl
     setTimes(
       generateTimeIntervals(
         date?.set({ hour: 10, minute: 0, second: 0, millisecond: 0 }),
-        date?.set({ hour: 21, minute: 30, second: 0, millisecond: 0 })
+        date?.set({ hour: 21, minute: 0, second: 0, millisecond: 0 })
       )
     );
   }, [date]);

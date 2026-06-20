@@ -90,7 +90,7 @@ const Register = ({ id }: RegisterProps) => {
               value={form.confirmPassword}
               onChange={e => setForm({ ...form, confirmPassword: e.target.value })}
             />
-            <button className="btn btn-primary w-64">Register</button>
+            <button className="btn btn-primary">Register</button>
           </form>
         </div>
       </dialog>

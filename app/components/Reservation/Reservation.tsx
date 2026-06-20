@@ -52,13 +52,13 @@ const Reservation = () => {
   const [date, setDate] = useState<DateTime>(
     isDateDisabled(new Date()) ? DateTime.now().plus({ days: 1 }).startOf("day") : DateTime.now()
   );
-  const [time, setTime] = useState<DateTime>(DateTime.now().plus({ minutes: 30 - (DateTime.now().minute % 30) }));
   const [times, setTimes] = useState<string[]>(
     generateTimeIntervals(
       date?.set({ hour: 10, minute: 0, second: 0, millisecond: 0 }),
       date?.set({ hour: 21, minute: 0, second: 0, millisecond: 0 })
     )
   );
+  const [time, setTime] = useState<DateTime>(DateTime.fromFormat(times[0], "h:mm a"));
   return (
     <aside className="join pt-24 px-8">
       <Guest />
