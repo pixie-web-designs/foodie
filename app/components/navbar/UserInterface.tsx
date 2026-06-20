@@ -2,7 +2,6 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { DateTime } from "luxon";
 
 import Register from "./registration/Register";
 import Login from "./registration/Login";

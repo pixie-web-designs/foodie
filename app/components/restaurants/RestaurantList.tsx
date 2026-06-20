@@ -3,6 +3,8 @@ import React, { Fragment } from "react";
 
 import RestaurantCard from "./RestaurantCard";
 
+import { env } from "@/lib/env";
+
 type ListProps = {
   categories: string[];
 };
@@ -19,7 +21,7 @@ interface Restaurant {
 
 const RestaurantList = async ({ categories }: ListProps) => {
   // Get restaurant data from server
-  const res = await fetch(`${process.env.API_URL}/restaurants`);
+  const res = await fetch(`${env.apiUrl}/restaurants`);
   const restaurants: Restaurant[] = await res.json();
 
   // Assign item categories and descriptors for display

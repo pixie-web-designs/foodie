@@ -2,21 +2,30 @@
 "use client";
 import React, { useState, useRef } from "react";
 
+import { env } from "@/lib/env";
+
 type RegisterProps = {
   id: string;
 };
 
 const Register = ({ id }: RegisterProps) => {
+  // Set state for form inputs
   const [form, setForm] = useState({
     name: "",
     email: "",
     password: "",
     confirmPassword: "",
   });
+
+  // Set modal reference for opening/closing modal
   const modalRef = useRef<HTMLDialogElement>(null);
+
+  // Function to open modal
   const openModal = () => modalRef.current?.showModal();
+
+  // Function to handle form submission
   const handleSubmit = async () => {
-    const response = await fetch(`${process.env.API_URL}/register`, {
+    const response = await fetch(`${env.apiUrl}/register`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -24,6 +33,7 @@ const Register = ({ id }: RegisterProps) => {
       body: JSON.stringify(form),
     });
 
+    // Response data
     const data = await response.json();
 
     // Open confirmation modal
@@ -72,6 +82,13 @@ const Register = ({ id }: RegisterProps) => {
               className="input w-full outline-0"
               value={form.password}
               onChange={e => setForm({ ...form, password: e.target.value })}
+            />
+            <label className="label">Confirm Password</label>
+            <input
+              type="password"
+              className="input w-full outline-0"
+              value={form.confirmPassword}
+              onChange={e => setForm({ ...form, confirmPassword: e.target.value })}
             />
             <button className="btn btn-primary w-64">Register</button>
           </form>
