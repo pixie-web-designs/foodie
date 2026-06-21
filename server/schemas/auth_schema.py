@@ -1,21 +1,29 @@
 from pydantic import BaseModel, EmailStr, Field, field_validator
 
+COMMON_PASSWORDS = set([
+  "password",
+  "123456",
+  "123456789",
+  "12345",
+  "12345678",
+  "qwerty",
+  "abc123",
+  "football",
+  "monkey",
+  "letmein",
+])
+
 # Auth models
 class RegisterRequest(BaseModel):
   name: str
   email: EmailStr
-  password: str = Field(min_length=12)
+  password: str = Field(min_length=12, max_length=128)
 
   @field_validator("password")
   @classmethod
   def password_strength(cls, v: str):
-    if (
-      len(v) < 12
-      or not any(c.isupper() for c in v)
-      or not any(c.islower() for c in v)
-      or not any(c.isdigit() for c in v)
-    ):
-      raise ValueError("Password is too weak")
+    if (v.lower() in COMMON_PASSWORDS):
+      raise ValueError("Password is too common")
     return v
   
   turnstile_token: str
