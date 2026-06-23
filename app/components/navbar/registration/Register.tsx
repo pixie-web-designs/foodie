@@ -3,12 +3,16 @@
 import React, { useState, useRef } from "react";
 
 import { env } from "@/lib/env";
+import TurnstileCaptcha from "./TurnstileCaptcha";
 
 type RegisterProps = {
   id: string;
 };
 
 const Register = ({ id }: RegisterProps) => {
+  // Set state for captcha token
+  const [captchaToken, setCaptchaToken] = useState<string>("");
+
   // Set state for form inputs
   const [form, setForm] = useState({
     name: "",
@@ -28,6 +32,9 @@ const Register = ({ id }: RegisterProps) => {
   // Set state for sumbission status
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  // Set state for registration modal being open or closed
+  const [isOpen, setIsOpen] = useState(false);
+
   // Password validation function
   const validatePassword = (password: string): string => {
     if (password.length < 12) {
@@ -46,6 +53,7 @@ const Register = ({ id }: RegisterProps) => {
       email: "",
       password: "",
       confirmPassword: "",
+      capcha: "",
     };
 
     // Check for empty name field
@@ -83,12 +91,21 @@ const Register = ({ id }: RegisterProps) => {
   const modalRef = useRef<HTMLDialogElement>(null);
 
   // Function to open modal
-  const openModal = () => modalRef.current?.showModal();
+  const openModal = () => {
+    setIsOpen(true);
+    modalRef.current?.showModal();
+  };
 
   // Function to handle form submission
   const handleSubmit = async () => {
     // Set submission status to true to disable form and show loading state
     setIsSubmitting(true);
+
+    if (!captchaToken) {
+      alert("Please complete the CAPTCHA challenge");
+      setIsSubmitting(false);
+      return;
+    }
 
     // Validate form inputs
     const valid = validateForm();
@@ -98,23 +115,24 @@ const Register = ({ id }: RegisterProps) => {
     }
 
     try {
-      const response = await fetch(`${env.apiUrl}/register`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(form),
-      });
+      // const response = await fetch(`${env.apiUrl}/register`, {
+      //   method: "POST",
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //   },
+      //   body: JSON.stringify(form),
+      // });
 
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.message || "Registration failed");
-      }
-      // Response data
-      const data = await response.json();
+      // if (!response.ok) {
+      //   const errorData = await response.json();
+      //   throw new Error(errorData.message || "Registration failed");
+      // }
+      // // Response data
+      // const data = await response.json();
 
-      // Open confirmation modal
-      console.log(data.message);
+      // // Open confirmation modal
+      // console.log(data.message);
+      console.log(form);
     } catch (err) {
       console.error("Registration error:", err);
       alert(err instanceof Error ? err.message : "An unexpected error occurred");
@@ -184,6 +202,7 @@ const Register = ({ id }: RegisterProps) => {
               }}
             />
             {errors.confirmPassword && <p className="text-error text-sm mt-1">{errors.confirmPassword}</p>}
+            {isOpen && <TurnstileCaptcha onVerify={setCaptchaToken} onExpire={() => setCaptchaToken("")} />}
             <button type="submit" className="btn btn-primary" disabled={isSubmitting}>
               {isSubmitting ? "Registering..." : "Register"}
             </button>
